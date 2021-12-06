@@ -1,0 +1,18 @@
+.main__header{
+   @include container;
+   padding-top: 40px;
+   padding-bottom: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   //border: 1px solid red;
+}
+
+.nav__lista{
+   li{
+      display: inline-block;
+   }
+   a{
+      @include lista-item-link;
+   }
+}
