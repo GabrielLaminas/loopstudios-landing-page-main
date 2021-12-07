@@ -5,14 +5,103 @@
    display: flex;
    align-items: center;
    justify-content: space-between;
-   //border: 1px solid red;
+}
+
+.logo{
+   position: relative;
+   z-index: 3;
+
+   img{
+      @include mobile{
+         max-width: 80%;
+      }
+   }
+}
+
+.nav__header{
+   display: flex;
+}
+
+.nav__icons{
+   display: none;
+   position: relative;
+
+   .icon--open{
+      visibility: visible;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 3;
+      transform: translate(-50%, -50%);
+   }
+
+   .icon--open.activated{
+      visibility: hidden;
+   }
+
+   .icon--close{
+      visibility: hidden;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      z-index: 3;
+      transform: translate(-50%, -50%);
+   }
+
+   .icon--close.activated{
+      visibility: visible;
+   }
+
+   @include tablet{
+      display: block;
+      cursor: pointer;
+   }
 }
 
 .nav__lista{
+   display: flex;
+
    li{
       display: inline-block;
    }
    a{
       @include lista-item-link;
+   }
+
+   @include tablet{
+      display: none;
+   }
+}
+
+.nav__lista.activated{
+   li{
+      @include tablet{
+         display: block;
+      }
+   }
+   a{
+      @include tablet{
+         padding: 20px;
+         font-family: $font-family-josefin-sans;
+         font-size: 2rem;
+         font-weight: 300;
+      }
+      @include mobile{
+         font-size: 1.5rem;
+      }
+   }
+
+   @include laptop{
+      display: flex;
+   }
+   @include tablet{
+      width: 100%;
+      height: 100vh;
+      padding-top: 150px;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: $Black;
    }
 }

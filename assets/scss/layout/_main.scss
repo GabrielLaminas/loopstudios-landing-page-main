@@ -13,4 +13,8 @@ main{
          @include main-title;
       }
    }
+
+   @include mobile{
+      background-image: url('/assets/images/mobile/image-hero.jpg');
+   }
 }
