@@ -81,7 +81,7 @@
    }
    a{
       @include tablet{
-         padding: 20px;
+         padding: 16px 20px;
          font-family: $font-family-josefin-sans;
          font-size: 2rem;
          font-weight: 300;
@@ -103,5 +103,7 @@
       left: 0;
       top: 0;
       background-color: $Black;
+      text-transform: uppercase;
+      animation: show-left 0.9s forwards;
    }
 }
