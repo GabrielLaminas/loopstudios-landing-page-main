@@ -66,6 +66,21 @@ $font-family-josefin-sans: 'Josefin Sans', sans-serif;
    }
 }
 
+@mixin creation-title {
+   font-family: $font-family-josefin-sans;
+   font-size: 2.5rem;
+   font-weight: 300;
+   text-transform: uppercase;
+
+   @include tablet{
+      text-align: center;
+   }
+   @include mobile{
+      font-size: 2rem;
+   }
+}
+
+
 @keyframes show-left {
    from{
       left: -100px;
