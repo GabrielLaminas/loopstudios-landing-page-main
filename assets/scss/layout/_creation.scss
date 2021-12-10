@@ -1,76 +1,82 @@
 .creations{
    @include container;
-   margin-top: 60px;
    margin-bottom: 100px;
 }
 
 .grid{
-   //border: 1px solid red;
-   display: flex;
-   flex-direction: column;
-   //grid-template-columns: repeat(4, 1fr);
-   //grid-template-rows: auto;
-   //gap: 30px;
-   //justify-items: center;
-   /*
-   @include tablet{
-      grid-template-columns: repeat(2, 1fr);
-   }
-   @include mobile{
-      grid-template-columns: repeat(2, 1fr);
-      border: 1px solid red
-   }*/
-}
-
-.grid__text{
-   margin: 80px 0;
-   display: flex;
-   justify-content: space-between;
-   flex-wrap: wrap;
-   align-items: center;
-
-   .grid__title{
-      @include creation-title;
-      grid-column: span 3;
-      align-items: center;
-   }
-   
-   .btn{
-      justify-self: end;
-      padding: 10px 36px;
-      color: $Black;
-      font-family: $font-family-alata;
-      font-size: 0.875rem;
-      font-weight: 400;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      text-align: center;
-      border: 2px solid $Very-Dark-Gray;
-      border-radius: 2px;
-   
-      &:hover{
-         background-color: $Black;
-         color: $White;
-         border: 2px solid $Black;
-         transition: .2s;
-         cursor: pointer;
-      }
-      order: 2;
-   }
-}
-
-.creation__items{
    display: grid;
-   grid-template-columns: repeat(4, 1fr);
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   grid-template-rows: 100px 1fr 1fr;
    gap: 30px;
-
+   grid-template-areas: 
+      "grid__title   grid__title grid__title btn"
+      "earth         arcade      soccer      car"
+      "abovevr       pocket      curiosity   fisheye"
+   ;
+   
    @include tablet{
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 60px 1fr 1fr;
+      gap: 20px;
+      grid-template-areas: 
+         "grid__title   grid__title"
+         "earth         arcade"
+         "soccer        car"
+         "abovevr       pocket"
+         "curiosity     fisheye"
+         "btn           btn"
+      ;
    }
    @include mobile{
-      grid-template-columns: repeat(1, 1fr);
-      gap: 30px;
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+         "grid__title"
+         "earth"   
+         "arcade"
+         "soccer"
+         "car"
+         "abovevr"
+         "pocket"
+         "curiosity"
+         "fisheye"
+         "btn"
+      ;
+   }
+}
+
+.grid__title{
+   grid-area: grid__title;
+   align-self: start;
+   @include creation-title;
+}
+
+.btn{
+   grid-area: btn;
+   justify-self: end;
+   align-self: start;
+   width: 200px;
+   padding: 10px 36px;
+   color: $Black;
+   font-family: $font-family-alata;
+   font-size: 0.875rem;
+   font-weight: 400;
+   letter-spacing: 5px;
+   text-transform: uppercase;
+   text-align: center;
+   border: 2px solid $Very-Dark-Gray;
+   border-radius: 2px;
+
+   &:hover{
+      background-color: $Black;
+      color: $White;
+      border: 2px solid $Black;
+      transition: .2s;
+      cursor: pointer;
+   }
+
+   @include tablet{
+      margin-top: 10px;
+      justify-self: center;
    }
 }
 
@@ -80,32 +86,18 @@
    background-repeat: no-repeat;
    background-size: cover;
    position: relative;
-   filter: brightness(80%);
 
    p{
-      max-width: 160px;
-      //padding-right: 10px;
+      max-width: 100%;
+      padding: 40px 30px;
       position: absolute;
-      
-      bottom: 35px;
-      left: 50px;
+      bottom: 0;
       color: $White;
       font-family: $font-family-josefin-sans;
       font-size: 1.75rem;
       font-weight: 300;
       text-transform: uppercase;
       border: 1px solid red;
-   }
-
-   &:hover p{
-      color: $Black;
-   }
-   
-
-   &:hover{
-      opacity: 0.5;
-      //filter: brightness(0);
-      cursor: pointer;
    }
 
    @include mobile{
@@ -116,6 +108,7 @@
 }
 
 #earth{
+   grid-area: earth;
    background-image: url('/assets/images/desktop/image-deep-earth.jpg');
    
    @include mobile{
@@ -124,6 +117,7 @@
 }
 
 #arcade{
+   grid-area: arcade;
    background-image: url('/assets/images/desktop/image-night-arcade.jpg');
    
    @include mobile{
@@ -132,6 +126,7 @@
 }
 
 #soccer{
+   grid-area: soccer;
    background-image: url('/assets/images/desktop/image-soccer-team.jpg');
    
    @include mobile{
@@ -140,6 +135,7 @@
 }
 
 #car{
+   grid-area: car;
    background-image: url('/assets/images/desktop/image-grid.jpg');
 
    @include mobile{
@@ -148,6 +144,7 @@
 }
 
 #abovevr{
+   grid-area: abovevr;
    background-image: url('/assets/images/desktop/image-from-above.jpg');
 
    @include mobile{
@@ -156,6 +153,7 @@
 }
 
 #pocket{
+   grid-area: pocket;
    background-image: url('/assets/images/desktop/image-pocket-borealis.jpg');
    
    @include mobile{
@@ -164,6 +162,7 @@
 }
 
 #curiosity{
+   grid-area: curiosity;
    background-image: url('/assets/images/desktop/image-curiosity.jpg');
    
    @include mobile{
@@ -172,6 +171,7 @@
 }
 
 #fisheye{
+   grid-area: fisheye;
    background-image: url('/assets/images/desktop/image-fisheye.jpg');
    
    @include mobile{

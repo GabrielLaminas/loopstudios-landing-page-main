@@ -366,69 +366,75 @@ main .main__title .title {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  margin-top: 60px;
   margin-bottom: 100px;
 }
 
 .grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  /*
-   @include tablet{
-      grid-template-columns: repeat(2, 1fr);
-   }
-   @include mobile{
-      grid-template-columns: repeat(2, 1fr);
-      border: 1px solid red
-   }*/
-}
-
-.grid__text {
-  margin: 80px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.grid__text .grid__title {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 2.5rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  grid-column: span 3;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 100px 1fr 1fr;
+      grid-template-rows: 100px 1fr 1fr;
+  gap: 30px;
+      grid-template-areas: "grid__title   grid__title grid__title btn" "earth         arcade      soccer      car" "abovevr       pocket      curiosity   fisheye";
 }
 
 @media screen and (max-width: 768px) {
-  .grid__text .grid__title {
+  .grid {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 60px 1fr 1fr;
+        grid-template-rows: 60px 1fr 1fr;
+    gap: 20px;
+        grid-template-areas: "grid__title   grid__title" "earth         arcade" "soccer        car" "abovevr       pocket" "curiosity     fisheye" "btn           btn";
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "grid__title" "earth"    "arcade" "soccer" "car" "abovevr" "pocket" "curiosity" "fisheye" "btn";
+  }
+}
+
+.grid__title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: grid__title;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2.375rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+  .grid__title {
     text-align: center;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .grid__text .grid__title {
+  .grid__title {
     font-size: 2rem;
   }
 }
 
-.grid__text .btn {
+.btn {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: btn;
   -ms-grid-column-align: end;
       justify-self: end;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  width: 200px;
   padding: 10px 36px;
   color: black;
   font-family: "Alata", sans-serif;
@@ -439,12 +445,9 @@ main .main__title .title {
   text-align: center;
   border: 2px solid dimgray;
   border-radius: 2px;
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
 }
 
-.grid__text .btn:hover {
+.btn:hover {
   background-color: black;
   color: white;
   border: 2px solid black;
@@ -453,27 +456,11 @@ main .main__title .title {
   cursor: pointer;
 }
 
-.creation__items {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-}
-
 @media screen and (max-width: 768px) {
-  .creation__items {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .creation__items {
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
-    gap: 30px;
+  .btn {
+    margin-top: 10px;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
 }
 
@@ -483,30 +470,19 @@ main .main__title .title {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  -webkit-filter: brightness(80%);
-          filter: brightness(80%);
 }
 
 .creation__item p {
-  max-width: 160px;
+  max-width: 100%;
+  padding: 40px 30px;
   position: absolute;
-  bottom: 35px;
-  left: 50px;
+  bottom: 0;
   color: white;
   font-family: "Josefin Sans", sans-serif;
   font-size: 1.75rem;
   font-weight: 300;
   text-transform: uppercase;
   border: 1px solid red;
-}
-
-.creation__item:hover p {
-  color: black;
-}
-
-.creation__item:hover {
-  opacity: 0.5;
-  cursor: pointer;
 }
 
 @media screen and (max-width: 480px) {
@@ -518,6 +494,9 @@ main .main__title .title {
 }
 
 #earth {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: earth;
   background-image: url("/assets/images/desktop/image-deep-earth.jpg");
 }
 
@@ -528,6 +507,9 @@ main .main__title .title {
 }
 
 #arcade {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: arcade;
   background-image: url("/assets/images/desktop/image-night-arcade.jpg");
 }
 
@@ -538,6 +520,9 @@ main .main__title .title {
 }
 
 #soccer {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: soccer;
   background-image: url("/assets/images/desktop/image-soccer-team.jpg");
 }
 
@@ -548,6 +533,9 @@ main .main__title .title {
 }
 
 #car {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: car;
   background-image: url("/assets/images/desktop/image-grid.jpg");
 }
 
@@ -558,6 +546,9 @@ main .main__title .title {
 }
 
 #abovevr {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: abovevr;
   background-image: url("/assets/images/desktop/image-from-above.jpg");
 }
 
@@ -568,6 +559,9 @@ main .main__title .title {
 }
 
 #pocket {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: pocket;
   background-image: url("/assets/images/desktop/image-pocket-borealis.jpg");
 }
 
@@ -578,6 +572,9 @@ main .main__title .title {
 }
 
 #curiosity {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: curiosity;
   background-image: url("/assets/images/desktop/image-curiosity.jpg");
 }
 
@@ -588,6 +585,9 @@ main .main__title .title {
 }
 
 #fisheye {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  grid-area: fisheye;
   background-image: url("/assets/images/desktop/image-fisheye.jpg");
 }
 
