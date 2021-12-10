@@ -17,8 +17,6 @@ $font-family-josefin-sans: 'Josefin Sans', sans-serif;
    font-weight: 400;
    
    &:hover {
-      transition: all 0.3s;
-
       &::after{
          @include laptop{
             content: '';
@@ -31,12 +29,6 @@ $font-family-josefin-sans: 'Josefin Sans', sans-serif;
             transform: translate(-50%, -95%);
             background-color: white;
          }
-      }
-
-      @include tablet{
-         color: $Dark-Gray;
-         font-weight: 700;
-         animation: show-left 0.9s forwards;
       }
    }
 }

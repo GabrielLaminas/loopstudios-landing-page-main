@@ -66,6 +66,16 @@
    }
    a{
       @include lista-item-link;
+
+      &:hover{
+         transition: all 0.3s;
+
+         @include tablet{
+            color: $Dark-Gray;
+            font-weight: 700;
+            animation: show-left 0.9s forwards;
+         }
+      }
    }
 
    @include tablet{

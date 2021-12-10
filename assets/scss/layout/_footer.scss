@@ -4,58 +4,96 @@ footer{
 
 .footer__container{
    @include container;
-   padding-top: 40px;
-   padding-bottom: 40px;
+   padding-top: 30px;
    display: flex;
    flex-wrap: wrap;
-   align-items: center;
    justify-content: space-between;
-   //border: 1px solid red;
+
+   @include laptop{
+      padding-bottom: 0;
+   }
+   @include tablet{
+      padding-bottom: 30px;
+   }
 }
 
 .footer__logo__link{
-   //border: 1px solid red;
+   
+   .footer__links{
+      margin: 20px 0;
+      li{
+         display: inline-block;
+         @include mobile{
+            display: block;
+            text-align: center;
+         }
+      }
 
-   & > nav li{
-      display: inline-block;
+      a{
+         @include lista-item-link;
+         padding: 3px 0 10px 0;
+         margin-right: 32px;
 
-      @include mobile{
-         display: flex;
-         flex-direction: column;
-         //align-items: center;
+         @include mobile{
+            margin-right: 0;
+            margin: 10px 0;
+         }
       }
    }
 
-   & > nav li a{
-      @include lista-item-link;
-      padding-left: 0;
-      padding-right: 36px;
-   }
-   
    @include mobile{
       margin: 0 auto;
-      text-align: center;
    }
 }
 
 .footer__social__copy{
-   border: 1px solid red;
 
-   & > div{
+   .footer__social{
       display: flex;
-      align-items: center;
       justify-content: flex-end;
-
+      align-items: center;
+      
       a{
-         margin-left: 16px;
+         @include lista-item-link;
+         margin-left: 18px;
+         padding: 10px 0;
+
+         @include tablet{
+            margin-left: 0;
+            margin-right: 18px;
+         }
+      }
+
+      @include tablet{
+         justify-content: flex-start;
+      }
+      @include mobile{
+         justify-content: center;
       }
    }
 
-   p{
-      margin-top: 20px;
+   .footer__copy{
+      margin-top: 12px;
       color: $Very-Dark-Gray;
       font-family: $font-family-alata;
-      font-size: 0.875rem;
+      font-size: 1rem;
       font-weight: 400;
+   }
+
+   @include mobile{
+      margin: 0 auto;
+      margin-top: 20px;
+      text-align: center;
+   }
+}
+
+.attribution {
+   padding: 16px 0; 
+   font-size: 0.6875rem; 
+   text-align: center;
+   color: $White; 
+
+   a{
+      color: $Very-Dark-Gray; 
    }
 }
