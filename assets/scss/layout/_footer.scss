@@ -1,5 +1,16 @@
 footer{
    background-color: $Black;
+
+   .attribution {
+      padding: 16px 0; 
+      color: $White; 
+      font-size: 0.6875rem; 
+      text-align: center;
+   
+      a{
+         color: $Very-Dark-Gray; 
+      }
+   }
 }
 
 .footer__container{
@@ -23,6 +34,7 @@ footer{
       margin: 20px 0;
       li{
          display: inline-block;
+         
          @include mobile{
             display: block;
             text-align: center;
@@ -84,16 +96,5 @@ footer{
       margin: 0 auto;
       margin-top: 20px;
       text-align: center;
-   }
-}
-
-.attribution {
-   padding: 16px 0; 
-   font-size: 0.6875rem; 
-   text-align: center;
-   color: $White; 
-
-   a{
-      color: $Very-Dark-Gray; 
    }
 }
