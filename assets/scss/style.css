@@ -376,7 +376,7 @@ main .main__title .title {
       grid-template-columns: 1fr 1fr 1fr 1fr;
   -ms-grid-rows: 100px 1fr 1fr;
       grid-template-rows: 100px 1fr 1fr;
-  gap: 30px;
+  gap: 25px;
       grid-template-areas: "grid__title   grid__title grid__title btn" "earth         arcade      soccer      car" "abovevr       pocket      curiosity   fisheye";
 }
 
@@ -467,29 +467,25 @@ main .main__title .title {
 .creation__item {
   width: 100%;
   height: 450px;
-  background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
 }
 
-.creation__item p {
-  max-width: 100%;
-  padding: 40px 30px;
+.creation__item .text--show p {
+  max-width: 160px;
+  padding: 20px;
   position: absolute;
   bottom: 0;
   color: white;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 1.75rem;
+  font-size: 1.375rem;
   font-weight: 300;
   text-transform: uppercase;
-  border: 1px solid red;
 }
 
 @media screen and (max-width: 480px) {
   .creation__item {
     max-width: 654px;
-    max-height: 150px;
-    background-position: center;
+    height: 180px;
   }
 }
 
@@ -497,12 +493,19 @@ main .main__title .title {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: earth;
-  background-image: url("/assets/images/desktop/image-deep-earth.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(255, 255, 255, 0.1)), to(rgba(0, 0, 0, 0.7))), url("/assets/images/desktop/image-deep-earth.jpg");
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 20%, rgba(0, 0, 0, 0.7)), url("/assets/images/desktop/image-deep-earth.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 @media screen and (max-width: 480px) {
   #earth {
-    background-image: url("/assets/images/mobile/image-deep-earth.jpg");
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.7)), to(rgba(255, 255, 255, 0.1))) 20%, url("/assets/images/mobile/image-deep-earth.jpg");
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.1)) 20%, url("/assets/images/mobile/image-deep-earth.jpg");
+    background-position: center;
+    background-size: cover;
   }
 }
 
@@ -510,12 +513,18 @@ main .main__title .title {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: arcade;
-  background-image: url("/assets/images/desktop/image-night-arcade.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(255, 255, 255, 0.1)), to(rgba(0, 0, 0, 0.7))), url("/assets/images/desktop/image-night-arcade.jpg");
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 20%, rgba(0, 0, 0, 0.7)), url("/assets/images/desktop/image-night-arcade.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media screen and (max-width: 480px) {
   #arcade {
-    background-image: url("/assets/images/mobile/image-night-arcade.jpg");
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.7)), to(rgba(255, 255, 255, 0.1))) 20%, url("/assets/images/mobile/image-night-arcade.jpg");
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.1)) 20%, url("/assets/images/mobile/image-night-arcade.jpg");
+    background-position: center;
+    background-size: cover;
   }
 }
 
@@ -523,12 +532,18 @@ main .main__title .title {
   -ms-grid-row: 2;
   -ms-grid-column: 3;
   grid-area: soccer;
-  background-image: url("/assets/images/desktop/image-soccer-team.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(255, 255, 255, 0.1)), to(rgba(0, 0, 0, 0.7))), url("/assets/images/desktop/image-soccer-team.jpg");
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 20%, rgba(0, 0, 0, 0.7)), url("/assets/images/desktop/image-soccer-team.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media screen and (max-width: 480px) {
   #soccer {
-    background-image: url("/assets/images/mobile/image-soccer-team.jpg");
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.7)), to(rgba(255, 255, 255, 0.1))) 20%, url("/assets/images/mobile/image-soccer-team.jpg");
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.1)) 20%, url("/assets/images/mobile/image-soccer-team.jpg");
+    background-position: center;
+    background-size: cover;
   }
 }
 
@@ -536,12 +551,18 @@ main .main__title .title {
   -ms-grid-row: 2;
   -ms-grid-column: 4;
   grid-area: car;
-  background-image: url("/assets/images/desktop/image-grid.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(255, 255, 255, 0.1)), to(rgba(0, 0, 0, 0.7))), url("/assets/images/desktop/image-grid.jpg");
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 20%, rgba(0, 0, 0, 0.7)), url("/assets/images/desktop/image-grid.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media screen and (max-width: 480px) {
   #car {
-    background-image: url("/assets/images/mobile/image-grid.jpg");
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.7)), to(rgba(255, 255, 255, 0.1))) 20%, url("/assets/images/mobile/image-grid.jpg");
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.1)) 20%, url("/assets/images/mobile/image-grid.jpg");
+    background-position: center;
+    background-size: cover;
   }
 }
 
@@ -549,12 +570,18 @@ main .main__title .title {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: abovevr;
-  background-image: url("/assets/images/desktop/image-from-above.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(255, 255, 255, 0.1)), to(rgba(0, 0, 0, 0.7))), url("/assets/images/desktop/image-from-above.jpg");
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 20%, rgba(0, 0, 0, 0.7)), url("/assets/images/desktop/image-from-above.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media screen and (max-width: 480px) {
   #abovevr {
-    background-image: url("/assets/images/mobile/image-from-above.jpg");
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.7)), to(rgba(255, 255, 255, 0.1))) 20%, url("/assets/images/mobile/image-from-above.jpg");
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.1)) 20%, url("/assets/images/mobile/image-from-above.jpg");
+    background-position: center;
+    background-size: cover;
   }
 }
 
@@ -562,12 +589,18 @@ main .main__title .title {
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: pocket;
-  background-image: url("/assets/images/desktop/image-pocket-borealis.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(255, 255, 255, 0.1)), to(rgba(0, 0, 0, 0.7))), url("/assets/images/desktop/image-pocket-borealis.jpg");
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 20%, rgba(0, 0, 0, 0.7)), url("/assets/images/desktop/image-pocket-borealis.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media screen and (max-width: 480px) {
   #pocket {
-    background-image: url("/assets/images/mobile/image-pocket-borealis.jpg");
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.7)), to(rgba(255, 255, 255, 0.1))) 20%, url("/assets/images/mobile/image-pocket-borealis.jpg");
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.1)) 20%, url("/assets/images/mobile/image-pocket-borealis.jpg");
+    background-position: center;
+    background-size: cover;
   }
 }
 
@@ -575,12 +608,18 @@ main .main__title .title {
   -ms-grid-row: 3;
   -ms-grid-column: 3;
   grid-area: curiosity;
-  background-image: url("/assets/images/desktop/image-curiosity.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(255, 255, 255, 0.1)), to(rgba(0, 0, 0, 0.7))), url("/assets/images/desktop/image-curiosity.jpg");
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 20%, rgba(0, 0, 0, 0.7)), url("/assets/images/desktop/image-curiosity.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media screen and (max-width: 480px) {
   #curiosity {
-    background-image: url("/assets/images/mobile/image-curiosity.jpg");
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.7)), to(rgba(255, 255, 255, 0.1))) 20%, url("/assets/images/mobile/image-curiosity.jpg");
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.1)) 20%, url("/assets/images/mobile/image-curiosity.jpg");
+    background-position: center;
+    background-size: cover;
   }
 }
 
@@ -588,12 +627,18 @@ main .main__title .title {
   -ms-grid-row: 3;
   -ms-grid-column: 4;
   grid-area: fisheye;
-  background-image: url("/assets/images/desktop/image-fisheye.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(255, 255, 255, 0.1)), to(rgba(0, 0, 0, 0.7))), url("/assets/images/desktop/image-fisheye.jpg");
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 20%, rgba(0, 0, 0, 0.7)), url("/assets/images/desktop/image-fisheye.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media screen and (max-width: 480px) {
   #fisheye {
-    background-image: url("/assets/images/mobile/image-fisheye.jpg");
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.7)), to(rgba(255, 255, 255, 0.1))) 20%, url("/assets/images/mobile/image-fisheye.jpg");
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.1)) 20%, url("/assets/images/mobile/image-fisheye.jpg");
+    background-position: center;
+    background-size: cover;
   }
 }
 
