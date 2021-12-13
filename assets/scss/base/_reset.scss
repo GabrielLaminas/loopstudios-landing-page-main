@@ -8,6 +8,10 @@ body{
    background-color: $White;
 }
 
+body.activated{
+   overflow: hidden;
+}
+
 ul li{ 
    list-style: none;
 }
