@@ -116,7 +116,6 @@
    }
 
    @include mobile{
-      max-width: 654px;
       height: 180px;
    }
 }
@@ -140,7 +139,8 @@
    background: linear-gradient(to bottom, rgba($White, 0.1) 20%, rgba($Black, 0.7)), url('/assets/images/desktop/image-night-arcade.jpg');
    background-repeat: no-repeat;
    background-size: cover;
-   
+   background-position: center;
+
    @include mobile{
       background: linear-gradient(to right, rgba($Black, 0.7), rgba($White, 0.1)) 20%, url('/assets/images/mobile/image-night-arcade.jpg');
       background-position: center;
@@ -153,6 +153,7 @@
    background: linear-gradient(to bottom, rgba($White, 0.1) 20%, rgba($Black, 0.7)), url('/assets/images/desktop/image-soccer-team.jpg');
    background-repeat: no-repeat;
    background-size: cover;
+   background-position: center;
 
    @include mobile{
       background: linear-gradient(to right, rgba($Black, 0.7), rgba($White, 0.1)) 20%, url('/assets/images/mobile/image-soccer-team.jpg');
@@ -166,6 +167,7 @@
    background: linear-gradient(to bottom, rgba($White, 0.1) 20%, rgba($Black, 0.7)), url('/assets/images/desktop/image-grid.jpg');
    background-repeat: no-repeat;
    background-size: cover;
+   background-position: center;
 
    @include mobile{
       background: linear-gradient(to right, rgba($Black, 0.7), rgba($White, 0.1)) 20%, url('/assets/images/mobile/image-grid.jpg');
@@ -179,6 +181,7 @@
    background: linear-gradient(to bottom, rgba($White, 0.1) 20%, rgba($Black, 0.7)), url('/assets/images/desktop/image-from-above.jpg');
    background-repeat: no-repeat;
    background-size: cover;
+   background-position: center;
 
    @include mobile{
       background: linear-gradient(to right, rgba($Black, 0.7), rgba($White, 0.1)) 20%, url('/assets/images/mobile/image-from-above.jpg');
@@ -192,6 +195,7 @@
    background: linear-gradient(to bottom, rgba($White, 0.1) 20%, rgba($Black, 0.7)), url('/assets/images/desktop/image-pocket-borealis.jpg');
    background-repeat: no-repeat;
    background-size: cover;
+   background-position: center;
 
    @include mobile{
       background: linear-gradient(to right, rgba($Black, 0.7), rgba($White, 0.1)) 20%, url('/assets/images/mobile/image-pocket-borealis.jpg');
@@ -205,6 +209,7 @@
    background: linear-gradient(to bottom, rgba($White, 0.1) 20%, rgba($Black, 0.7)), url('/assets/images/desktop/image-curiosity.jpg');
    background-repeat: no-repeat;
    background-size: cover;
+   background-position: center;
 
    @include mobile{
       background: linear-gradient(to right, rgba($Black, 0.7), rgba($White, 0.1)) 20%, url('/assets/images/mobile/image-curiosity.jpg');
@@ -218,6 +223,7 @@
    background: linear-gradient(to bottom, rgba($White, 0.1) 20%, rgba($Black, 0.7)), url('/assets/images/desktop/image-fisheye.jpg');
    background-repeat: no-repeat;
    background-size: cover;
+   background-position: center;
 
    @include mobile{
       background: linear-gradient(to right, rgba($Black, 0.7), rgba($White, 0.1)) 20%, url('/assets/images/mobile/image-fisheye.jpg');
