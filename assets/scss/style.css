@@ -49,7 +49,7 @@ img {
 main {
   width: 100%;
   height: 100vh;
-  background-image: url("/assets/images/desktop/image-hero.jpg");
+  background-image: url(/assets/images/desktop/image-hero.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -96,7 +96,7 @@ main .main__title .title {
 
 @media screen and (max-width: 480px) {
   main {
-    background-image: url("/assets/images/mobile/image-hero.jpg");
+    background-image: url(/assets/images/mobile/image-hero.jpg);
   }
 }
 
